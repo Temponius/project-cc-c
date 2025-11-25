@@ -89,6 +89,55 @@ body::-webkit-scrollbar {
     width: min(1200px, 90%);
 }
 
+.game-space {
+    margin-bottom: 40vh;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    transition: height 0.2s ease;
+}
+
+@keyframes selectorButtonAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    60% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes resultAnim {
+    0% {
+        font-size: 0rem;
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    60% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.selector-result {
+    font-size: 3rem;
+    margin: 5vh;
+    animation: resultAnim 0.3s ease forwards;
+}
+
+.selector-container {
+    margin-left: 2vw;
+    display: flex;
+    justify-content: space-around;
+}
+
 .secondSec {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding: 10vh;
@@ -263,6 +312,24 @@ h1 {
     
     transition: padding-left 0.4s ease;
     transition: padding-right 0.2s ease;
+}
+
+.selector-button {
+    color: var(--text);
+    
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    
+    background-color: var(--invisible-bg-light);
+
+    animation: selectorButtonAnim 0.3s ease forwards;
+    margin-left: 3vw;
 }
 
 .linkBar .leftLink {
